@@ -1,0 +1,26 @@
+import Foundation
+var daysInMounth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+var mounthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+for day in daysInMounth {
+  print(day, terminator: " ")
+}
+print(separator: " ")
+for i in 0...11 {
+  print("\(mounthName[i]) - \(daysInMounth[i]),", terminator: " ")
+}
+print(separator: " ")
+var mounth: [(name: String, number: Int)]  = [("January", 31), ("February", 29), ("March", 31), ("April", 30), ("May", 31), ("June", 30), ("July", 31), ("August", 31), ("September", 30), ("October", 31), ("November", 30), ("December", 31)]
+for i in 0...11 {
+  print(mounth[i], separator: " ")
+}
+for i in stride(from: 11, to: 0, by: -1) {
+  print("\(mounthName[i]) - \(daysInMounth[i]),", terminator: " ")
+}
+print(separator: " ")
+var randomDate = ("July", 4)
+var dC = 0, mC = 0
+while((mounthName[mC] != randomDate.0) && (mC < 12)) {
+    dC += daysInMounth[mC]
+    mC+=1
+}
+print("Until \(randomDate.0) \(randomDate.1) there are \(dC + randomDate.1) days.")
